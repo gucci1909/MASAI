@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="email" id="mm">
+        <input type="number" placeholder="phone number" id="no">
+        <input type="password" placeholder="password" id="pw">
+        <input type="submit" />
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit", clc);
+    var inb = JSON.parse(localStorage.getItem("signup details")) || [];
+    function clc(){
+        event.preventDefault();
+
+        var nn = {
+           name : form.mm.value,
+           class : form.no.value,
+           id : form.pw.value,
+         
+        }
+        inb.push(nn);
+        localStorage.setItem("signup details", JSON.stringify(inb));
+
+
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="email" id="gg">
+        <input type="password" placeholder="password" id="bb">
+         <input type="submit" placeholder="Login" id="login">
+    </form>
+</body>
+</html>
+
+<script>
+    
+
+    document.querySelector("#form").addEventListener("submit" , clc);
+
+    function clc()
+    {
+        event.preventDefault();
+        var arr = JSON.parse(localStorage.getItem("signup details"));
+        var aa = document.querySelector("#gg").value;
+        var vv = document.querySelector("#bb").value;
+        // console.log(arr.name)
+        for(var i = 0 ; i<arr.length ; i++)
+        {
+            if(arr[i].name == aa && arr[i].id == vv)
+            {
+                alert("Login successfull");
+
+            }
+            else
+            {
+                alert("Login unsuccessful");
+
+            }
+
+        }
+
+        
+
+
+    }
+
+
+
+
+</script>
